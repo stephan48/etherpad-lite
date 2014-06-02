@@ -100,10 +100,14 @@
   },
   */
 
-  /* API Users for API authentication. file = read key from file and generate if 
-   * nessessary. key = use the key specified here. whitelist_functions =
-   * only allow listed functions. blacklist_functions = dissallow functions 
-   * mentioned here. */
+  /* API Users for API authentication. You have to either specify the file
+   * (if a valid filepath is specified the first line of the file is read 
+   * and used as apikey for this user, if the file is empty or not existent
+   * a new api key of 32 bit is generated and written to the file and then
+   * used) or "key"(if a key is specified it is used for authentication
+   * for this user) option. Optionally you could specify the
+   * "whitelist_functions" (Restrict allowed API Methods) or the
+   * "blacklist_functions" (Only allow this API Methods) */
 
   "apiusers": {
     "default": {

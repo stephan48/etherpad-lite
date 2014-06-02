@@ -156,15 +156,14 @@ exports.requireAuthentication = false;
 exports.requireAuthorization = false;
 exports.users = {};
 
-/* This setting is used if you want to have multiply api keys
- * for fine grained authentification and authorization by default
- * the only API Key is read from the File APIKEY.txt but this
- * can be changed here. You should provide a hash per api 
- * user with either the keys "file" or "key" for specifying
- * if a key should be read from file or specified in the config
- * file. Specifying either the keys "whitelist_functions" or
- * "blacklist_functions" allows for a restriction of functions
- * the user can call. */
+/* API Users for API authentication. You have to either specify the file
+ * (if a valid filepath is specified the first line of the file is read
+ * and used as apikey for this user, if the file is empty or not existent
+ * a new api key of 32 bit is generated and written to the file and then
+ * used) or "key"(if a key is specified it is used for authentication
+ * for this user) option. Optionally you could specify the
+ * "whitelist_functions" (Restrict allowed API Methods) or the
+ * "blacklist_functions" (Only allow this API Methods) */
 exports.apiusers = {
   "default": {
     "file": "./APIKEY.txt"
