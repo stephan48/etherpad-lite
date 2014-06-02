@@ -156,6 +156,26 @@ exports.requireAuthentication = false;
 exports.requireAuthorization = false;
 exports.users = {};
 
+/* This setting is used if you want to have multiply api keys
+ * for fine grained authentification and authorization by default
+ * the only API Key is read from the File APIKEY.txt but this
+ * can be changed here. You should provide a hash per api 
+ * user with either the keys "file" or "key" for specifying
+ * if a key should be read from file or specified in the config
+ * file. Specifying either the keys "whitelist_functions" or
+ * "blacklist_functions" allows for a restriction of functions
+ * the user can call. */
+exports.apiusers = {
+  "default": {
+    "file": "./APIKEY.txt"
+  }
+}
+
+/* This setting allows the restriction of API access to the new
+ * authentication method. If enabled it will block all legacy 
+ * versions. */
+exports.apiAllowLegacyAuth = true;
+
 //checks if abiword is avaiable
 exports.abiwordAvailable = function()
 {

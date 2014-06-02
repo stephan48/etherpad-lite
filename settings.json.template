@@ -100,6 +100,20 @@
   },
   */
 
+  /* API Users for API authentication. file = read key from file and generate if 
+   * nessessary. key = use the key specified here. whitelist_functions =
+   * only allow listed functions. blacklist_functions = dissallow functions 
+   * mentioned here. */
+
+  "apiusers": {
+    "default": {
+      "file": "./APIKEY.txt"
+    }
+  },
+
+  /* Block or allow legacy API Authentication */
+  "apiAllowLegacyAuth": true,
+
   // restrict socket.io transport methods
   "socketTransportProtocols" : ["xhr-polling", "jsonp-polling", "htmlfile"],
   
